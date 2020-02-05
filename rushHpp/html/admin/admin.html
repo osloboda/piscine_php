@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../css/admin/admin.css">
+
+<body>
+<div class="container">
+    <ul class="responsive-table">
+        <h3>Categories</h3>
+        <li class="table-header">
+            <div class="col ">Id</div>
+            <div class="col">Name</div>
+            <div class="col">Actions</div>
+        </li>
+        {{CATEGORIES}}
+        <button><a href="admin/add/category">Add</a></button>
+    </ul>
+</div>
+<div class="container">
+    <ul class="responsive-table">
+        <h3>Orders</h3>
+        <li class="table-header">
+            <div class="col">User</div>
+            <div class="col">Products</div>
+            <div class="col">Status</div>
+            <div class="col">Phone</div>
+            <div class="col">Address</div>
+            <div class="col">Actions</div>
+        </li>
+        {{ORDERS}}
+        <button><a href="admin/add/order">Add</a></button>
+    </ul>
+</div>
+<div class="container">
+    <ul class="responsive-table">
+        <h3>Users</h3>
+        <li class="table-header">
+            <div class="col ">Id </div>
+            <div class="col">Email</div>
+            <div class="col">Is_admin</div>
+            <div class="col">Actions</div>
+        </li>
+        {{USERS}}
+        <button><a href="admin/add/user">Add</a></button>
+    </ul>
+</div>
+<div class="container">
+    <ul class="responsive-table">
+        <h3>Products</h3>
+        <li class="table-header">
+            <div class="col ">Id </div>
+            <div class="col">Name</div>
+            <div class="col">Description</div>
+            <div class="col">Price</div>
+            <div class="col">Stack_count</div>
+            <div class="col">Image_url</div>
+            <div class="col">Category</div>
+            <div class="col">Actions</div>
+        </li>
+        {{Products}}
+        <button><a href="admin/add/product">Add</a></button>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/base.css">
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .sidebar a {font-family: "Roboto", sans-serif}
+    body,h1,h2,h3,h4,h5,h6,.wide {font-family: "Montserrat", sans-serif;}
+</style>
+<body class="content" style="max-width:1200px">
+
+<!-- Sidebar/menu -->
+<nav class="sidebar bar-block white collapse top" style="z-index:3;width:250px" id="mySidebar">
+    <div class="container display-container padding-16">
+        <span onclick="closeThis()" class="fa fa-remove hide-large button display-topright"></span>
+        <h3 class="wide"><b>LOGO</b></h3>
+    </div>
+    <div class="padding-64 large text-grey" style="font-weight:bold">
+        {{CATEGORIES}}
+        <a href="javascript:void(0)" class="category bar-item button" data-category="all">All</a>
+    </div>
+    <div class="padding-64 large text-black" style="font-weight:bold">
+        <a class="category bar-item button" href="login">Sign in</a>
+    </div>
+    <div class="padding-64 large text-black" style="font-weight:bold">
+        <a class="category bar-item button" href="signout">Sign out</a>
+    </div>
+    <div class="padding-64 large text-black" style="font-weight:bold">
+        <a class="category bar-item button" href="cart/show">Cart <i class="fa fa-shopping-cart margin-right"></i></a>
+    </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="bar top hide-large black xlarge">
+    <div class="bar-item padding-24 wide">LOGO</div>
+    <span class="bar-item button padding-24 right" onclick="openThis()"><i class="fa fa-bars"></i></span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="overlay hide-large" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="main main" style="margin-left:250px">
+
+    <!-- Push down content on small screens -->
+    <div class="hide-large" style="margin-top:83px"></div>
+
+    <!-- Top header -->
+    <header class="container xlarge">
+        <p class="left" id="header">All</p>
+    </header>
+
+
+    <!-- Product grid -->
+   <div>
+       <div class="container">
+           <main class="grid">
+               {{PRODUCTS}}
+
+           </main>
+       </div>
+   </div>
+
+    <!-- Footer -->
+
+    <div class="black center padding-24 footer">Powered by hr | osloboda</div>
+
+    <!-- End page content -->
+</div>
+
+<script>
+    // Open and close sidebar
+    function openThis() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+    }
+
+    function closeThis() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+    }
+    function is_log()
+    {
+        return $_SESSION['user_email'];
+    }
+    function filters() {
+        const categories = document.getElementsByClassName("category");
+        const cards = document.getElementsByClassName("card");
+
+        const switchRunner = function (category) {
+            const switchClass = function() {
+                const attribute = this.getAttribute("data-category");
+                const header = document.getElementById("header");
+                header.innerHTML = category.innerHTML;
+                Array.from(cards).forEach(card => {
+                    if (attribute !== 'all' && !card.classList.contains(attribute)) {
+                        card.classList.add("hidden");
+                    } else {
+                        card.classList.remove("hidden");
+                    }
+                });
+            };
+            return switchClass;
+        };
+
+        Array.from(categories).forEach(function(element) {
+            element.addEventListener("click", switchRunner(element));
+        });
+    }
+    filters();
+</script>
+
+</body>
+</html>

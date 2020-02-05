@@ -1,0 +1,31 @@
+<form id="form" action="/admin/add/order" method="post">
+    <h3>Order</h3>
+
+    <fieldset style="display: none">
+        <input name="kind" placeholder="kind" type="text" autofocus value="order">
+    </fieldset>
+    <fieldset style="display: none">
+        <input name="id" placeholder="id" type="text" autofocus value="{{ID}}">
+    </fieldset>
+    <fieldset >
+        <input name="id" placeholder="id" type="text" autofocus value="{{ID}}" disabled>
+    </fieldset>
+    <fieldset>
+        <input name="user_id" placeholder="User" type="text" required value="{{USER_ID}}">
+    </fieldset>
+    <fieldset>
+        <textarea name="products" placeholder="Products" required>{{PRODUCTS}}</textarea>
+    </fieldset>
+    <fieldset>
+        <input name="status" placeholder="Status" type="text" required value="{{STATUS}}">
+    </fieldset>
+    <fieldset>
+        <input name="phone" placeholder="Phone" type="text" required value="{{PHONE}}">
+    </fieldset>
+    <fieldset>
+        <input name="address" placeholder="Address" type="text" required value="{{ADDRESS}}">
+    </fieldset>
+    <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+</form>

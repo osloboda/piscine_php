@@ -1,0 +1,18 @@
+<form id="form" action="/admin/add/category" method="post">
+    <h3>Category</h3>
+    <fieldset style="display: none">
+        <input name="kind" placeholder="kind" type="text" value="category">
+    </fieldset>
+    <fieldset style="display: none">
+        <input name="id" placeholder="id" type="text"  value="{{ID}}">
+    </fieldset>
+    <fieldset >
+        <input name="id" placeholder="id" type="text" autofocus value="{{ID}}" disabled>
+    </fieldset>
+    <fieldset>
+        <input name="name" placeholder="Name" type="text" required value="{{NAME}}">
+    </fieldset>
+    <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+</form>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<title>Edit</title>
+<link rel="stylesheet" href="../css/admin/forms/base.css">
+<body>
+<div class="container">
+    <form id="form" action="/cart/confirm" method="post">
+        <h3>Order</h3>
+        <fieldset>
+            <textarea name="Products" placeholder="Products" required>{{PRODUCTS}}</textarea>
+        </fieldset>
+        <fieldset>
+            <input name="Phone" placeholder="Phone" type="text" required>
+        </fieldset>
+        <fieldset>
+            <input name="Address" placeholder="Address" type="text" required>
+        </fieldset>
+        <fieldset>
+            <button name="Submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+        </fieldset>
+    </form>
+</div>
+</body>

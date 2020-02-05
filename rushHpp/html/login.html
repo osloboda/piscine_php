@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="../css/login.css">
+
+<script>
+    function animeteChange() {
+        const form = document.getElementById('registerForm');
+        if (form.classList.contains('disabled'))
+            form.classList.remove('disabled');
+        else
+            form.classList.add('disabled');
+
+        const login = document.getElementById('loginForm')
+        if (login.classList.contains('disabled'))
+            login.classList.remove('disabled');
+        else
+            login.classList.add('disabled');
+
+    }
+</script>
+
+<div class="login-page">
+    <div class="form">
+        <form class="register-form disabled" action="/register" method="post" id="registerForm">
+
+                <input name="E-mail" placeholder="Email" type="text">
+
+                <input name="Password" placeholder="Password" type="password">
+
+            <button type="submit"  data-submit="...Sending">Create</button>
+            <p class="message">Already registered? <a onclick="animeteChange()" href="#">Sign In</a></p>
+        </form>
+        <form class="login-form" action="/login/confirm" method="post" id="loginForm">
+            <input name="E-mail" placeholder="Email" type="text">
+
+            <input name="Password" placeholder="Password" type="password">
+
+            <button type="submit"  data-submit="...Sending">Login</button>
+            <p class="message">Not registered? <a onclick="animeteChange()" href="#">Create an account</a></p>
+        </form>
+    </div>
+</div>

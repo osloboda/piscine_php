@@ -1,0 +1,25 @@
+<form id="form" action="/admin/add/user" method="post">
+    <h3>User</h3>
+    <fieldset style="display: none">
+        <input name="kind" placeholder="kind" type="text" value="user">
+    </fieldset>
+    <fieldset style="display: none">
+        <input name="id" placeholder="id" type="text"  value="{{ID}}">
+    </fieldset>
+    <fieldset >
+        <input name="id" placeholder="id" type="text" autofocus value="{{ID}}" disabled>
+    </fieldset>
+    <fieldset>
+        <input name="email" placeholder="Email" type="text" required value="{{EMAIL}}">
+    </fieldset>
+    <fieldset>
+        <input name="password" placeholder="Password" type="password" required value="{{PASSWORD}}">
+    </fieldset>
+    <fieldset>
+        Is admin
+        <input name="is_admin" placeholder="Is Admin" type="checkbox" {{CHECKED}}>
+    </fieldset>
+    <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+    </fieldset>
+</form>
